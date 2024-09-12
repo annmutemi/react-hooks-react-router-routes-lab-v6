@@ -12,7 +12,7 @@ function Home() {
         const data = await response.json();
         setMovie(data);
       } catch (error) {
-        console.error('Error fetching movies:', error);
+        console.log('Error fetching movies:', error);
       }
     };
  

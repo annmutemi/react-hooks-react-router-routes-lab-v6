@@ -11,7 +11,7 @@ function Movie() {
     fetch(`http://localhost:4000/movies/${id}`)
     .then(r => r.json())
     .then(data => setMovie(data))
-    .catch(error => console.error(error))
+    .catch(error => console.log(error))
   }, [id]);
   return (
     <>

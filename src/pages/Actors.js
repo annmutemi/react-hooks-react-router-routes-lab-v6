@@ -11,7 +11,7 @@ function Actors() {
         const data = await response.json();
         setActors(data);
       } catch (error) {
-        console.error('Error fetching movies:', error);
+        console.log('Error fetching movies:', error);
       }
     };
  
