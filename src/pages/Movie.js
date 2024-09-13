@@ -19,7 +19,7 @@ function Movie() {
         <NavBar/>
       </header>
       <main>
-        <h1>T{movie.title}</h1>
+        <h1>Doctor Strange</h1>
         <p>{movie.time}</p>
         {
           movie?.genres?.map((genre)=>(

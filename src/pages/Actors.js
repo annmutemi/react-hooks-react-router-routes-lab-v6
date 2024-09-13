@@ -30,7 +30,7 @@ function Actors() {
               <h2>{actor.name}</h2>
               {
                 actor.movies.map((movie)=>(
-                  <ul>{movie}</ul>
+                  <li>{movie}</li>
                 ))
               }
             </article>

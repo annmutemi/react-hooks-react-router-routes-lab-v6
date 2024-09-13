@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Movie from "./pages/Movie";
 import Directors from "./pages/Directors";
 import Actors from "./pages/Actors";
+import { Navigate } from "react-router-dom";
 const routes = [
   {
     path: "/",
@@ -24,6 +25,14 @@ const routes = [
     path:"/movie/:id",
     element:<Movie/>,
     errorElement:<ErrorPage/>
+  },
+  {
+    path:"/bad-route",
+    element:<ErrorPage/>
+  },
+  {
+    path: "*",
+    element: <Navigate to="/bad-route" replace />
   }
    
   ];

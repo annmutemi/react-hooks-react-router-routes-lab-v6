@@ -25,13 +25,11 @@ function Home() {
       </header>
       <main>
         <h1>Home Page</h1>
-        <ul>{
+        {
           movies.map((movie)=>(
             <li><MovieCard title={movie.title} id={movie.id} /></li>
           ))
           }
-          
-        </ul>
       </main>
     </>
   );
