@@ -1,43 +1,45 @@
-import { useEffect, useState } from "react";
+import React from "react";
 import NavBar from "../components/NavBar";
 
-function Actors() {
-  const [actors, setActors] = useState([]);
- 
-  useEffect(() => {
-    const fetchActors = async () => {
-      try {
-        const response = await fetch(`http://localhost:4000/actors`);
-        const data = await response.json();
-        setActors(data);
-      } catch (error) {
-        console.log('Error fetching movies:', error);
-      }
-    };
- 
-    fetchActors();
-  }, []);
+const Actors = () => {
+  const actors = [
+    {
+      name: "Benedict Cumberbatch",
+      movies: ["Doctor Strange", "The Imitation Game", "Black Mass"],
+    },
+    {
+      name: "Justin Timberlake",
+      movies: ["Trolls", "Friends with Benefits", "The Social Network"],
+    },
+    {
+      name: "Anna Kendrick",
+      movies: ["Pitch Perfect", "Into The Wood"],
+    },
+    {
+      name: "Tom Cruise",
+      movies: [
+        "Jack Reacher: Never Go Back",
+        "Mission Impossible 4",
+        "War of the Worlds",
+      ],
+    },
+  ];
+
   return (
-    <>
-      <header>
-        <NavBar/>
-      </header>
-      <main>
-        <h1>Actors Page</h1>
-        {
-          actors.map((actor)=>(
-            <article>
-              <h2>{actor.name}</h2>
-              {
-                actor.movies.map((movie)=>(
-                  <li>{movie}</li>
-                ))
-              }
-            </article>
-          ))
-        }
-      </main>
-    </>
+    <div>
+      <NavBar />
+      <h1>Actors Page</h1>
+      {actors.map((actor, index) => (
+        <article key={index}>
+          <h2>{actor.name}</h2>
+          <ul>
+            {actor.movies.map((movie, index) => (
+              <li key={index}>{movie}</li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </div>
   );
 };
 
